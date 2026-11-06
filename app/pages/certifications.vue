@@ -1,28 +1,14 @@
 <template>
   <div id="app-container" class="min-h-screen text-white overflow-x-hidden font-serif">
-    <!-- Background Container -->
+    <!--Background Container-->
     <div id="background" class="fixed w-full h-screen top-0 left-0 -z-10"></div>
 
-    <!-- Header -->
-    <header class="fixed top-0 left-0 w-full flex flex-col sm:flex-row justify-between items-center py-4 px-5 sm:py-[18px] sm:px-[30px] lg:py-5 lg:px-10 bg-black/40 backdrop-blur-[5px] z-10 box-border gap-3.5 sm:gap-4">
-      <div class="logo">
-        <NuxtLink to="/" class="text-white font-bold text-lg sm:text-2xl lg:text-[28px] no-underline text-center">Dan Jared Viernes</NuxtLink>
-      </div>
-
-      <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5">
-        <NuxtLink to="/about" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">About</NuxtLink>
-        <NuxtLink to="/certifications" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800 font-semibold underline">Certifications</NuxtLink>
-        <NuxtLink to="/tech-stack" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">Tech Stack</NuxtLink>
-        <NuxtLink to="/contact" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">Contact</NuxtLink>
-      </nav>
-    </header>
-
-    <!-- Certifications Section -->
+    <!--Certifications Section-->
     <section id="certifications" class="section py-[70px] sm:py-[90px] lg:py-[120px] px-4 sm:px-[25px] lg:px-[80px]">
       <h2 class="certification text-center text-[26px] sm:text-[32px] lg:text-[40px] font-bold tracking-[2px] mb-[50px] text-white">Certifications</h2>
 
       <div class="cert flex justify-center flex-wrap gap-[25px] sm:gap-[40px]">
-        <!-- CERT 1 -->
+        <!--CERT 1-->
         <div class="certificate w-full max-w-[350px] sm:max-w-[350px] lg:w-[400px] text-center rounded-[12px] overflow-hidden backdrop-blur-[10px] bg-[rgba(6,5,5,0.4)] shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition duration-300 hover:-translate-y-[10px]">
           <img 
             src="/images/certificate/cert1.jpg" 
@@ -46,7 +32,7 @@
           </a>
         </div>
 
-        <!-- CERT 2 -->
+        <!--CERT 2-->
         <div class="certificate w-full max-w-[350px] sm:max-w-[350px] lg:w-[400px] text-center rounded-[12px] overflow-hidden backdrop-blur-[10px] bg-[rgba(6,5,5,0.4)] shadow-[0_10px_25px_rgba(0,0,0,0.5)] transition duration-300 hover:-translate-y-[10px]">
           <img 
             src="/images/certificate/cert2.jpg" 
@@ -72,7 +58,7 @@
       </div>
     </section>
 
-    <!-- IMAGE MODAL -->
+    <!--IMAGE MODAL-->
     <div id="imgModal" class="modal fixed inset-0 z-[999] pt-[60px] bg-black/90 flex items-center justify-center" v-if="isModalOpen" @click="closeModal">
       <span class="close absolute top-[20px] right-[15px] sm:right-[20px] lg:right-[35px] text-white text-[28px] sm:text-[32px] lg:text-[40px] cursor-pointer">&times;</span>
       <img class="modal-content mx-auto block w-[95%] sm:w-[90%] max-w-[1200px] rounded-[10px] object-contain" :src="modalImgSrc" alt="Certificate Preview" @click.stop />
