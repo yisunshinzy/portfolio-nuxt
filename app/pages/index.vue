@@ -1,32 +1,33 @@
 <template>
-  <div id="app-container">
-    <div id="background"></div>
-    <div class="container"></div>
+  <div id="app-container" class="min-h-screen text-white overflow-x-hidden font-serif">
+    <!-- Background Container -->
+    <div id="background" class="fixed w-full h-screen top-0 left-0 -z-10"></div>
+    <div class="container mx-auto"></div>
 
-    <header class="header">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full flex flex-col sm:flex-row justify-between items-center py-4 px-5 sm:py-[18px] sm:px-[30px] lg:py-5 lg:px-10 bg-black/40 backdrop-blur-[5px] z-10 box-border gap-3.5 sm:gap-4">
       <div class="logo">
-        <NuxtLink to="/">Dan Jared Viernes</NuxtLink>
-        <!-- Use <router-link to="/"> if using standard Vue Router instead of Nuxt -->
+        <NuxtLink to="/" class="text-white font-bold text-lg sm:text-2xl lg:text-[28px] no-underline text-center">Dan Jared Viernes</NuxtLink>
       </div>
 
-      <nav>
-        <NuxtLink to="/about">About</NuxtLink>
-        <NuxtLink to="/certifications">Certifications</NuxtLink>
-        <NuxtLink to="/tech-stack">Tech Stack</NuxtLink>
-        <NuxtLink to="/contact">Contact</NuxtLink>
+      <nav class="flex flex-wrap justify-center gap-3 sm:gap-4 lg:gap-5">
+        <NuxtLink to="/about" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">About</NuxtLink>
+        <NuxtLink to="/certifications" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">Certifications</NuxtLink>
+        <NuxtLink to="/tech-stack" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">Tech Stack</NuxtLink>
+        <NuxtLink to="/contact" class="no-underline text-white text-xs sm:text-sm lg:text-base transition duration-300 hover:text-neutral-800">Contact</NuxtLink>
       </nav>
     </header>
 
-    <section id="home" class="home">
-      <div class="home-content">
+    <!-- Home Section -->
+    <section id="home" class="home h-auto sm:h-screen flex justify-center items-center pt-[130px] pb-[60px] sm:py-[140px] lg:py-0 px-4 sm:px-10 lg:px-[80px]">
+      <div class="home-content flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 sm:gap-[30px] lg:gap-[40px]">
         <div class="home-image">
-          <!-- Assets in the public folder are accessed from the root / -->
-          <img src="/images/profile/profile1.jpg" alt="profile" />
+          <img src="/images/profile/profile1.jpg" alt="profile" class="w-[150px] sm:w-[200px] lg:w-[250px] rounded-[30%] border-4 border-white object-cover" />
         </div>
 
         <div class="home-info">
-          <h1>Dan Jared Viernes</h1>
-          <p class="subtitle">Full Stack Developer</p>
+          <h1 class="text-2xl sm:text-[30px] lg:text-[40px] font-bold m-0">Dan Jared Viernes</h1>
+          <p class="subtitle text-[13px] sm:text-[15px] lg:text-[18px] opacity-80 mt-1 sm:mt-[5px]">Full Stack Developer</p>
         </div>
       </div>
     </section>
@@ -36,11 +37,9 @@
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue'
 
-// If you want to load external scripts dynamically for Vanta.js backgrounds:
 let vantaEffect = null
 
 onMounted(async () => {
-  // Dynamically load Three.js and Vanta waves if not already loaded globally
   if (typeof window !== 'undefined') {
     await loadScript('https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js')
     await loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js')
@@ -64,7 +63,6 @@ onBeforeUnmount(() => {
   if (vantaEffect) vantaEffect.destroy()
 })
 
-// Helper function to load external CDN scripts dynamically
 function loadScript(src) {
   return new Promise((resolve, reject) => {
     if (document.querySelector(`script[src="${src}"]`)) {
@@ -80,7 +78,9 @@ function loadScript(src) {
 }
 </script>
 
-<style scoped>
-/* Import your styles or put scoped CSS here */
-@import '~/assets/style.css';
+<style>
+/* Global smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
 </style>
