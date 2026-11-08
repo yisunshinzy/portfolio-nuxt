@@ -1,7 +1,11 @@
 <template>
-  <div class="min-h-screen flex flex-col justify-between text-white bg-slate-950">
+  <!-- REMOVED bg-slate-950 from here so it doesn't cover the Vanta background -->
+  <div class="min-h-screen flex flex-col justify-between text-white relative overflow-x-hidden">
     <NuxtRouteAnnouncer />
 
+    <!-- Global Fullscreen Vanta Background -->
+    <div id="vanta-background" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></div>
+    
     <!-- Floating Global Navbar Header -->
     <header class="fixed top-5 inset-x-0 z-50 px-4 sm:px-6 w-full max-w-[95%] mx-auto">
       <nav class="bg-gray-900/85 backdrop-blur-md border border-gray-800/80 rounded-2xl shadow-xl px-8 py-3 flex items-center justify-between transition-all">
@@ -38,10 +42,8 @@
       <NuxtPage />
     </main>
 
-    <!-- Global Footer -->
-    <footer id="app-footer" class="relative text-white overflow-x-hidden font-serif border-t border-slate-800/80 z-10">
-      <div id="footer-background" class="absolute inset-0 -z-10 w-full h-full"></div>
-
+    <!-- Global Footer with Dark Backdrop -->
+    <footer id="app-footer" class="relative text-white overflow-x-hidden font-serif border-t border-slate-800/80 z-10 bg-slate-950/80 backdrop-blur-md">
       <div class="section contact-section text-center py-[50px] sm:py-[70px] lg:py-[90px] px-4 sm:px-[25px] lg:px-[80px]">
         <h2 class="text-[26px] sm:text-[34px] lg:text-[46px] font-bold mb-4">Contact</h2>
         <p class="contact-text max-w-[800px] mx-auto text-base sm:text-lg lg:text-xl leading-relaxed mb-8 opacity-90">
@@ -60,8 +62,10 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import { useRoute } from 'vue-router'
 
+const route = useRoute()
 const isOpen = ref(false)
 let vantaEffect = null
 
@@ -90,17 +94,16 @@ useSeoMeta({
   twitterCard: 'summary_large_image'
 })
 
-onMounted(async () => {
+const initVanta = () => {
   if (typeof window !== 'undefined') {
-    // Download both scripts in parallel
-    await Promise.all([
-      loadScript('https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js'),
-      loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js')
-    ])
-
-    if (window.VANTA) {
+    const el = document.querySelector('#vanta-background')
+    if (window.VANTA && window.THREE && el) {
+      if (vantaEffect) {
+        vantaEffect.destroy()
+        vantaEffect = null
+      }
       vantaEffect = window.VANTA.WAVES({
-        el: '#footer-background',
+        el: '#vanta-background',
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
@@ -114,22 +117,22 @@ onMounted(async () => {
         waveSpeed: 0.75,
         zoom: 0.85
       })
+    } else {
+      setTimeout(initVanta, 50)
     }
   }
+}
+
+onMounted(() => {
+  initVanta()
+})
+
+// Re-initialize Vanta whenever the route changes (including 404 page transitions)
+watch(() => route.fullPath, () => {
+  setTimeout(initVanta, 100)
 })
 
 onBeforeUnmount(() => {
   if (vantaEffect) vantaEffect.destroy()
 })
-
-function loadScript(src) {
-  return new Promise((resolve, reject) => {
-    if (document.querySelector(`script[src="${src}"]`)) { resolve(); return; }
-    const script = document.createElement('script')
-    script.src = src
-    script.onload = resolve
-    script.onerror = reject
-    document.head.appendChild(script)
-  })
-}
 </script>

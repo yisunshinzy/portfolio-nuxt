@@ -5,6 +5,16 @@ export default defineNuxtConfig({
   modules: ['@nuxtjs/tailwindcss'],
   app: {
     head: {
+      script: [
+        {
+          src: 'https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js',
+          defer: true
+        },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js',
+          defer: true
+        }
+      ],
       link: [
         {
           rel: 'preconnect',

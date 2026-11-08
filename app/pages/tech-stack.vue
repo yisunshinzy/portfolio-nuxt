@@ -1,17 +1,30 @@
 <template>
-  <div id="app-container" class="min-h-screen text-white overflow-x-hidden font-serif">
-    <!--Background Container-->
-    <div id="background" class="fixed w-full h-screen top-0 left-0 -z-10"></div>
+  <div class="max-w-6xl mx-auto px-4 sm:px-[25px] lg:px-[80px] py-8 relative z-10 font-serif">
+    <!-- Tech Stack Section -->
+    <section id="tech" class="section py-8 sm:py-[40px] lg:py-[60px]">
+      <!-- Page Title -->
+      <h1 class="techstacks text-center text-[32px] sm:text-[42px] lg:text-[54px] font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 mb-8 sm:mb-10 lg:mb-12 drop-shadow-lg">
+        Tech Stack
+      </h1>
 
-    <!--Tech Stack Section-->
-    <section id="tech" class="section py-[70px] sm:py-[90px] lg:py-[120px] px-4 sm:px-[25px] lg:px-[80px]">
-      <h2 class="techstacks text-center text-[32px] sm:text-[42px] lg:text-[60px] font-bold mb-[40px] sm:mb-[50px] lg:mb-[60px] text-white">Tech Stack</h2>
-
-      <div class="tech-grid w-full max-w-[1400px] mx-auto grid grid-cols-[repeat(auto-fit,minmax(160px,1fr))] sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-[20px] sm:gap-[20px] lg:gap-[30px] p-[20px]">
-        <div v-for="tech in techList" :key="tech.name" class="tech-box h-[220px] sm:h-[220px] lg:h-[260px] bg-[rgba(255,255,255,0.08)] border border-[rgba(255,255,255,0.15)] rounded-[18px] sm:rounded-[20px] lg:rounded-[28px] flex flex-col justify-center items-center backdrop-blur-[16px] transition-all duration-300 ease-out relative overflow-hidden group hover:-translate-y-3 hover:scale-[1.03] hover:bg-[rgba(255,255,255,0.14)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.35),0_0_25px_rgba(147,197,253,0.15)]">
-          <div class="absolute inset-0 bg-gradient-to-br from-[rgba(255,255,255,0.18)] via-transparent to-[rgba(255,255,255,0.05)] opacity-0 group-hover:opacity-100 transition duration-400 ease-out pointer-events-none"></div>
-          <img :src="tech.img" :alt="tech.name" class="w-[70px] h-[70px] sm:w-[85px] sm:h-[85px] lg:w-[110px] lg:h-[110px] object-contain mb-[10px] sm:mb-[15px] lg:mb-[22px] transition duration-400 ease-out group-hover:scale-108 group-hover:rotate-[3deg]">
-          <p class="text-[15px] sm:text-[18px] lg:text-[22px] font-semibold tracking-[1px] text-white">{{ tech.name }}</p>
+      <!-- Tech Cards Grid -->
+      <div class="tech-grid w-full max-w-[1400px] mx-auto grid grid-cols-2 sm:grid-cols-[repeat(auto-fit,minmax(160px,1fr))] lg:grid-cols-[repeat(auto-fit,minmax(220px,1fr))] gap-4 sm:gap-6 lg:gap-8">
+        <div 
+          v-for="tech in techList" 
+          :key="tech.name" 
+          class="tech-box h-[180px] sm:h-[220px] lg:h-[260px] bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl flex flex-col justify-center items-center relative overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.08]"
+        >
+          <!-- Subtle Glow Overlay on Hover -->
+          <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+          
+          <img 
+            :src="tech.img" 
+            :alt="tech.name" 
+            class="w-[60px] h-[60px] sm:w-[85px] sm:h-[85px] lg:w-[105px] lg:h-[105px] object-contain mb-3 sm:mb-4 lg:mb-6 transition-transform duration-300 ease-out group-hover:scale-110"
+          >
+          <p class="text-sm sm:text-lg lg:text-xl font-bold tracking-wide text-gray-200 group-hover:text-white transition-colors">
+            {{ tech.name }}
+          </p>
         </div>
       </div>
     </section>
@@ -20,7 +33,6 @@
 
 <script setup>
 import { techList } from '@/scripts/techlist'
-import { useVanta } from '@/scripts/vanta'
 
 useHead({
   title: 'Tech Stack | Dan Jared Viernes'
@@ -34,12 +46,9 @@ useSeoMeta({
   ogImage: '/images/profile/profile1.jpg',
   twitterCard: 'summary_large_image',
 })
-
-useVanta('#background')
 </script>
 
 <style>
-
 html {
   scroll-behavior: smooth;
 }
