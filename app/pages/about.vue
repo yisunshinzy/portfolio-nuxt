@@ -7,7 +7,7 @@
           
           <!-- Page Title with Entrance Fade Animation -->
           <div class="text-center mb-8 animate-fade-in">
-            <h1 class="abouttitle text-[32px] sm:text-[42px] lg:text-[54px] font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 m-0 drop-shadow-lg">
+            <h1 class="abouttitle text-[32px] sm:text-[42px] lg:text-[54px] font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 m-0 drop-shadow-lg font-serif">
               About Me
             </h1>
           </div>
@@ -37,24 +37,25 @@
                   Basketball
                 </span>
                 <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
-                  Games
+                  Valorant
                 </span>
                 <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
                   Food Enthusiast
                 </span>
               </div>
 
-              <p class="text-base sm:text-lg lg:text-xl leading-[1.7] lg:leading-[1.8] text-gray-200 opacity-95 tracking-wide font-sans">
+              <!-- Paragraphs set to Marcellus SC Font -->
+              <p class="font-marcellus text-base sm:text-lg lg:text-xl leading-[1.7] lg:leading-[1.8] text-gray-200 opacity-95 tracking-wide">
                 I want to become a full-stack developer because I enjoy creating projects, 
                 solving problems, and turning ideas into useful technology. 
-                Outside of my studies, I am big into basketball, I love making plays with my teams. 
+                Outside of my studies, I am big into basketball—I love making plays with my teams. 
                 I also spend a lot of my free time playing Valorant, 
                 which actually helped spark my initial interest in programming. 
                 Also, I am a huge fan of trying new foods, 
                 especially finding the best food spots in the area.
               </p>
 
-              <p class="text-base sm:text-lg lg:text-xl leading-[1.7] lg:leading-[1.8] text-gray-200 opacity-95 tracking-wide font-sans">
+              <p class="font-marcellus text-base sm:text-lg lg:text-xl leading-[1.7] lg:leading-[1.8] text-gray-200 opacity-95 tracking-wide">
                 My experience on the basketball court has shaped my professional outlook. 
                 I believe that the best technical solutions come from high-performing teams. 
                 I also want to create applications that are as engaging as the games I play, 
@@ -73,7 +74,13 @@
 
 <script setup>
 useHead({
-  title: 'About | Dan Jared Viernes'
+  title: 'About | Dan Jared Viernes',
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap'
+    }
+  ]
 })
 
 useSeoMeta({
@@ -89,6 +96,10 @@ useSeoMeta({
 <style>
 html {
   scroll-behavior: smooth;
+}
+
+.font-marcellus {
+  font-family: 'Marcellus SC', serif;
 }
 
 @keyframes fadeIn {
