@@ -1,12 +1,12 @@
 <template>
-  <div class="max-w-6xl mx-auto px-4 sm:px-[25px] lg:px-[80px] py-8 relative z-10 font-serif">
+  <div class="max-w-6xl mx-auto px-4 sm:px-[25px] lg:px-[80px] py-8 relative z-10 font-serif min-h-[calc(100vh-80px)] flex items-center justify-center">
     <!-- Home Section -->
-    <section id="home" class="min-h-[75vh] flex justify-center items-center py-8 sm:py-[40px] lg:py-[60px]">
+    <section id="home" class="w-full flex justify-center items-center py-4 sm:py-8">
       
-      <!--card -->
+      <!-- Card -->
       <div class="home-content bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-center justify-center gap-6 sm:gap-[30px] lg:gap-[40px] max-w-4xl w-full mx-auto transition-all duration-500 hover:border-white/20 animate-fade-in">
         
-        <!--profile image -->
+        <!-- Profile Image -->
         <div class="home-image flex-shrink-0 relative group">
           <span class="absolute -inset-1.5 blur-xl opacity-30 bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-500 rounded-[30%] group-hover:opacity-75 transition duration-500 animate-pulse"></span>
           <img 
@@ -16,7 +16,7 @@
           />
         </div>
 
-        <!-- info -->
+        <!-- Info -->
         <div class="home-info flex flex-col items-center md:items-start justify-center text-center md:text-left space-y-3">
           
           <h1 class="text-3xl sm:text-[38px] lg:text-[48px] font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 m-0 drop-shadow-lg">
@@ -29,12 +29,12 @@
             </span>
           </div>
 
-          <!-- qoute -->
+          <!-- Quote -->
           <p class="text-xs sm:text-sm italic text-gray-300/80 font-sans tracking-wide max-w-md pt-2 border-t border-white/10 mt-3">
             "It's not about being perfect, it's about being better than you were yesterday."
           </p>
 
-          <!-- buttons -->
+          <!-- Buttons -->
           <div class="flex items-center gap-4 pt-4">
             <a 
               href="https://linkedin.com" 
@@ -78,7 +78,7 @@ useSeoMeta({
   ogTitle: 'Dan Jared Viernes | Full Stack Developer',
   description: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
   ogDescription: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
-  ogImage: '/images/profile/profile1.jpg',
+  ogImage: '/images/profile/profile2.jpg',
   twitterCard: 'summary_large_image',
 })
 </script>

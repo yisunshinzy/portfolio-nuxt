@@ -42,8 +42,8 @@
       <NuxtPage />
     </main>
 
-    <!-- Global Footer with Dark Backdrop -->
-    <footer id="app-footer" class="relative text-white overflow-x-hidden font-serif border-t border-slate-800/80 z-10 bg-slate-950/80 backdrop-blur-md">
+    <!-- Global Footer with Dark Backdrop (Hidden on Home Page) -->
+    <footer v-if="route.path !== '/'" id="app-footer" class="relative text-white overflow-x-hidden font-serif border-t border-slate-800/80 z-10 bg-slate-950/80 backdrop-blur-md">
       <div class="section contact-section text-center py-[50px] sm:py-[70px] lg:py-[90px] px-4 sm:px-[25px] lg:px-[80px]">
         <h2 class="text-[26px] sm:text-[34px] lg:text-[46px] font-bold mb-4">Contact</h2>
         <p class="contact-text max-w-[800px] mx-auto text-base sm:text-lg lg:text-xl leading-relaxed mb-8 opacity-90">

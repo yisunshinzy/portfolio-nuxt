@@ -1,7 +1,7 @@
 <template>
-  <div class="max-w-6xl mx-auto px-4 sm:px-[25px] lg:px-[80px] py-8 relative z-10 font-serif">
+  <div class="max-w-6xl mx-auto px-4 sm:px-[25px] lg:px-[80px] py-8 relative z-10 font-serif min-h-[calc(100vh-140px)] flex flex-col justify-center">
     <!-- Certifications Section -->
-    <section id="certifications" class="section py-8 sm:py-[40px] lg:py-[60px]">
+    <section id="certifications" class="section py-8 sm:py-[40px] lg:py-[60px] my-auto">
       <!-- Page Title -->
       <h1 class="certification text-center text-[32px] sm:text-[42px] lg:text-[54px] font-black tracking-wide text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 mb-12 drop-shadow-lg">
         Certifications
