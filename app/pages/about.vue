@@ -38,12 +38,24 @@
 <script setup>
 import { useVanta } from '@/scripts/vanta'
 
-// Initialize Vanta waves background for the About page
+useHead({
+  title: 'About | Dan Jared Viernes'
+})
+
+useSeoMeta({
+  title: 'About | Dan Jared Viernes',
+  ogTitle: 'About | Dan Jared Viernes',
+  description: 'Learn more about Dan Jared Viernes, full-stack developer background, personal interests, team mindset, and technology passion.',
+  ogDescription: 'Learn more about Dan Jared Viernes, full-stack developer background, personal interests, team mindset, and technology passion.',
+  ogImage: '/images/profile/profile1.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 useVanta('#background')
 </script>
 
 <style>
-/* Global smooth scroll behavior */
+
 html {
   scroll-behavior: smooth;
 }

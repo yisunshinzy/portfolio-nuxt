@@ -38,12 +38,23 @@
 <script setup>
 import { useVanta } from '@/scripts/vanta'
 
-// Initialize Vanta background animation for the contact page
+useHead({
+  title: 'Contact | Dan Jared Viernes'
+})
+
+useSeoMeta({
+  title: 'Contact | Dan Jared Viernes',
+  ogTitle: 'Contact | Dan Jared Viernes',
+  description: 'Get in touch with Dan Jared Viernes for software development projects, collaborations, and professional inquiries. Connect on LinkedIn or GitHub.',
+  ogDescription: 'Get in touch with Dan Jared Viernes for software development projects, collaborations, and professional inquiries. Connect on LinkedIn or GitHub.',
+  ogImage: '/images/profile/profile1.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 useVanta('#background')
 </script>
 
 <style>
-/* Global smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }

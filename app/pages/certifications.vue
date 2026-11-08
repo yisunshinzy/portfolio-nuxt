@@ -70,15 +70,25 @@
 import { useModal } from '@/scripts/modal'
 import { useVanta } from '@/scripts/vanta'
 
-// Import modal states and functions from scripts/modal.js
+useHead({
+  title: 'Certifications | Dan Jared Viernes'
+})
+
+useSeoMeta({
+  title: 'Certifications | Dan Jared Viernes',
+  ogTitle: 'Certifications | Dan Jared Viernes',
+  description: 'View professional certifications earned by Dan Jared Viernes, including Microsoft PowerPoint Associate and Word Associate credentials.',
+  ogDescription: 'View professional certifications earned by Dan Jared Viernes, including Microsoft PowerPoint Associate and Word Associate credentials.',
+  ogImage: '/images/certificate/cert1.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 const { isModalOpen, modalImgSrc, openModal, closeModal } = useModal()
 
-// Initialize Vanta background animation
 useVanta('#background')
 </script>
 
 <style>
-/* Global smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }

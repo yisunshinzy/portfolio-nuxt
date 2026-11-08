@@ -22,12 +22,24 @@
 import { techList } from '@/scripts/techlist'
 import { useVanta } from '@/scripts/vanta'
 
-// Initialize Vanta background animation
+useHead({
+  title: 'Tech Stack | Dan Jared Viernes'
+})
+
+useSeoMeta({
+  title: 'Tech Stack | Dan Jared Viernes',
+  ogTitle: 'Tech Stack | Dan Jared Viernes',
+  description: 'Explore the full-stack development technologies, frameworks, and tools used by Dan Jared Viernes.',
+  ogDescription: 'Explore the full-stack development technologies, frameworks, and tools used by Dan Jared Viernes.',
+  ogImage: '/images/profile/profile1.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 useVanta('#background')
 </script>
 
 <style>
-/* Global smooth scroll behavior */
+
 html {
   scroll-behavior: smooth;
 }

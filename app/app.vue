@@ -33,7 +33,7 @@
       </div>
     </header>
 
-    <!-- Page Content (Added pt-32 so content doesn't hide under the fixed navbar) -->
+    <!-- Page Content -->
     <main class="flex-grow pt-32 pb-16 relative z-10">
       <NuxtPage />
     </main>
@@ -61,13 +61,43 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+
 const isOpen = ref(false)
 let vantaEffect = null
 
+// Global SEO Setup
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | Dan Jared R. Viernes` : 'Dan Jared R. Viernes | Full Stack Developer'
+  },
+  htmlAttrs: {
+    lang: 'en'
+  },
+  meta: [
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+  ]
+})
+
+useSeoMeta({
+  title: 'Dan Jared R. Viernes | Full Stack Developer',
+  ogTitle: 'Dan Jared R. Viernes | Full Stack Developer',
+  description: 'Official portfolio of Dan Jared R. Viernes featuring full-stack development projects, technical skills, and certifications.',
+  ogDescription: 'Official portfolio of Dan Jared R. Viernes featuring full-stack development projects, technical skills, and certifications.',
+  ogImage: '/images/profile/profile1.jpg',
+  twitterCard: 'summary_large_image'
+})
+
 onMounted(async () => {
   if (typeof window !== 'undefined') {
-    await loadScript('https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js')
-    await loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js')
+    // Download both scripts in parallel
+    await Promise.all([
+      loadScript('https://cdn.jsdelivr.net/npm/three@0.134.0/build/three.min.js'),
+      loadScript('https://cdn.jsdelivr.net/npm/vanta@0.5.24/dist/vanta.waves.min.js')
+    ])
+
     if (window.VANTA) {
       vantaEffect = window.VANTA.WAVES({
         el: '#footer-background',

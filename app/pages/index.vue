@@ -35,7 +35,19 @@
 <script setup>
 import { useVanta } from '@/scripts/vanta'
 
-// Initialize Vanta waves background for the home page
+useHead({
+  title: 'Dan Jared Viernes | Full Stack Developer'
+})
+
+useSeoMeta({
+  title: 'Dan Jared Viernes | Full Stack Developer',
+  ogTitle: 'Dan Jared Viernes | Full Stack Developer',
+  description: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
+  ogDescription: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
+  ogImage: '/images/profile/profile1.jpg',
+  twitterCard: 'summary_large_image',
+})
+
 useVanta('#background')
 </script>
 
