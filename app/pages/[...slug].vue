@@ -3,7 +3,7 @@
     <!-- Redesigned 404 Card -->
     <div class="w-full max-w-2xl text-center bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-8 sm:p-14 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-white/20">
       
-      <!-- Big Glowing 404 Header -->
+      <!-- glowing 404 Header -->
       <div class="relative inline-block mb-4">
         <span class="absolute -inset-1 blur-2xl opacity-30 bg-gradient-to-r from-cyan-500 via-blue-500 to-indigo-500 rounded-full"></span>
         <h1 class="relative text-7xl sm:text-9xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white via-slate-200 to-slate-400 drop-shadow-lg">
@@ -11,7 +11,7 @@
         </h1>
       </div>
 
-      <!-- Main Title & Description with daisyUI Badge -->
+      <!-- badge  -->
       <div class="space-y-4 mb-8">
         <div class="flex justify-center">
           <span class="badge badge-error badge-outline font-sans tracking-widest uppercase py-3 px-4 font-semibold text-xs sm:text-sm">

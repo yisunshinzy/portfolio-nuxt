@@ -14,7 +14,7 @@
           :key="tech.name" 
           class="tech-box h-[180px] sm:h-[220px] lg:h-[260px] bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-2xl sm:rounded-3xl flex flex-col justify-center items-center relative overflow-hidden group shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-300 ease-out hover:-translate-y-2 hover:scale-[1.02] hover:border-white/20 hover:bg-white/[0.08]"
         >
-          <!-- Subtle Glow Overlay on Hover -->
+          <!-- glow hover -->
           <div class="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
           
           <img 

@@ -62,7 +62,7 @@
       </div>
     </section>
 
-    <!-- IMAGE MODAL -->
+    <!-- modal -->
     <div 
       id="imgModal" 
       class="modal fixed inset-0 z-[999] p-4 bg-black/90 backdrop-blur-md flex items-center justify-center transition-all" 

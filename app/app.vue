@@ -1,11 +1,11 @@
 <template>
-  <!-- REMOVED bg-slate-950 from here so it doesn't cover the Vanta background -->
+  <!-- Vanta background -->
   <div class="min-h-screen flex flex-col justify-between text-white relative overflow-x-hidden">
     <NuxtRouteAnnouncer />
 
     <!-- Global Fullscreen Vanta Background -->
     <div id="vanta-background" class="fixed inset-0 w-full h-full -z-10 pointer-events-none"></div>
-    
+
     <!-- Floating Global Navbar Header -->
     <header class="fixed top-5 inset-x-0 z-50 px-4 sm:px-6 w-full max-w-[95%] mx-auto">
       <nav class="bg-gray-900/85 backdrop-blur-md border border-gray-800/80 rounded-2xl shadow-xl px-8 py-3 flex items-center justify-between transition-all">
