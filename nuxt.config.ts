@@ -4,6 +4,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/tailwindcss'],
   app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
     head: {
       script: [
         {
@@ -27,7 +29,7 @@ export default defineNuxtConfig({
         },
         {
           rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap'
+          href: 'https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Marcellus+SC&display=swap'
         }
       ]
     }

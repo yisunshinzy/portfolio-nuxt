@@ -13,33 +13,36 @@
           </div>
 
           <!-- Glassmorphism Card with Layout & Image Integration -->
-          <div class="w-full bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-white/20 flex flex-col md:flex-row items-center gap-8 lg:gap-12 animate-fade-in-up">
+          <div class="glass-card-interactive group relative w-full bg-white/[0.04] backdrop-blur-xl border border-white/10 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.6)] flex flex-col md:flex-row items-center gap-8 lg:gap-12 animate-fade-in-up overflow-hidden">
             
+            <!-- Top-right Ambient Glow Reflection on Hover -->
+            <div class="pointer-events-none absolute -top-24 -right-24 h-48 w-48 rounded-full bg-cyan-500/10 blur-3xl transition-opacity duration-500 group-hover:opacity-100 opacity-0" />
+
             <!-- Side Profile Image with Glow Ring -->
-            <div class="flex-shrink-0 relative group">
-              <span class="absolute -inset-1.5 blur-xl opacity-30 bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-500 rounded-3xl group-hover:opacity-75 transition duration-500 animate-pulse"></span>
+            <div class="flex-shrink-0 relative group/img">
+              <span class="absolute -inset-1.5 blur-xl opacity-30 bg-gradient-to-tr from-cyan-500 via-blue-500 to-indigo-500 rounded-3xl group-hover/img:opacity-75 transition duration-500 animate-pulse"></span>
               <img 
                 src="/images/profile/profile1.jpg" 
                 alt="Dan Jared Viernes" 
-                class="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px] h-auto rounded-3xl border-4 border-white/20 object-cover shadow-2xl transition-all duration-500 group-hover:scale-105 group-hover:border-white/40"
+                class="relative w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px] h-auto rounded-3xl border-4 border-white/20 object-cover shadow-2xl transition-all duration-500 group-hover/img:scale-105 group-hover/img:border-white/40"
               />
             </div>
 
             <!-- Content Area -->
-            <div class="space-y-6 text-left">
+            <div class="space-y-6 text-left relative z-10">
               
-              <!-- Interest Badges using daisyUI -->
+              <!-- Interest Badges using daisyUI with Micro-Interactions -->
               <div class="flex flex-wrap gap-2 justify-center md:justify-start">
-                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
+                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3 transition-transform duration-200 hover:scale-105 hover:bg-white/20 hover:border-cyan-400/50 cursor-default">
                   Full Stack
                 </span>
-                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
+                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3 transition-transform duration-200 hover:scale-105 hover:bg-white/20 hover:border-cyan-400/50 cursor-default">
                   Basketball
                 </span>
-                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
+                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3 transition-transform duration-200 hover:scale-105 hover:bg-white/20 hover:border-cyan-400/50 cursor-default">
                   Valorant
                 </span>
-                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3">
+                <span class="badge badge-neutral bg-white/10 text-cyan-300 border-white/10 font-sans tracking-wider uppercase text-xs py-2 px-3 transition-transform duration-200 hover:scale-105 hover:bg-white/20 hover:border-cyan-400/50 cursor-default">
                   Food Enthusiast
                 </span>
               </div>
@@ -130,5 +133,19 @@ html {
 
 .animate-fade-in-up {
   animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glassmorphism Card Interactive Elevation */
+.glass-card-interactive {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+.glass-card-interactive:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 60px -10px rgba(6, 182, 212, 0.15), 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 </style>
