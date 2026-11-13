@@ -92,7 +92,6 @@ useSeoMeta({
   description: 'Learn more about Dan Jared Viernes, full-stack developer background, personal interests, team mindset, and technology passion.',
   ogDescription: 'Learn more about Dan Jared Viernes, full-stack developer background, personal interests, team mindset, and technology passion.',
   ogImage: '/images/profile/profile1.jpg',
-  twitterCard: 'summary_large_image',
 })
 </script>
 

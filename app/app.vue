@@ -103,31 +103,6 @@ const route = useRoute()
 const isOpen = ref(false)
 let vantaEffect = null
 
-// Global SEO Setup
-useHead({
-  titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | Dan Jared R. Viernes` : 'Dan Jared R. Viernes | Full Stack Developer'
-  },
-  htmlAttrs: {
-    lang: 'en'
-  },
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-  ]
-})
-
-useSeoMeta({
-  title: 'Dan Jared R. Viernes | Full Stack Developer',
-  ogTitle: 'Dan Jared R. Viernes | Full Stack Developer',
-  description: 'Official portfolio of Dan Jared R. Viernes featuring full-stack development projects, technical skills, and certifications.',
-  ogDescription: 'Official portfolio of Dan Jared R. Viernes featuring full-stack development projects, technical skills, and certifications.',
-  ogImage: '/images/profile/profile1.jpg',
-  twitterCard: 'summary_large_image'
-})
-
 const initVanta = () => {
   if (typeof window !== 'undefined') {
     const el = document.querySelector('#vanta-background')

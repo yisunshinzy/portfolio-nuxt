@@ -65,7 +65,6 @@ useSeoMeta({
   description: 'Get in touch with Dan Jared Viernes for software development projects, collaborations, and professional inquiries. Connect on LinkedIn or GitHub.',
   ogDescription: 'Get in touch with Dan Jared Viernes for software development projects, collaborations, and professional inquiries. Connect on LinkedIn or GitHub.',
   ogImage: '/images/profile/profile1.jpg',
-  twitterCard: 'summary_large_image',
 })
 
 useVanta('#background')

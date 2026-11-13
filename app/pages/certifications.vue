@@ -110,7 +110,6 @@ useSeoMeta({
   description: 'View professional certifications earned by Dan Jared Viernes, including Microsoft PowerPoint Associate and Word Associate credentials.',
   ogDescription: 'View professional certifications earned by Dan Jared Viernes, including Microsoft PowerPoint Associate and Word Associate credentials.',
   ogImage: '/images/certificate/cert1.jpg',
-  twitterCard: 'summary_large_image',
 })
 
 const { isModalOpen, modalImgSrc, openModal, closeModal } = useModal()

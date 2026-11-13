@@ -48,7 +48,6 @@ useSeoMeta({
   title: '404 - Page Not Found | Dan Jared R. Viernes',
   description: 'The requested page could not be found.',
   ogTitle: '404 - Page Not Found | Dan Jared R. Viernes',
-  twitterCard: 'summary_large_image'
 })
 </script>
 

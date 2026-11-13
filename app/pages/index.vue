@@ -84,7 +84,6 @@ useSeoMeta({
   description: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
   ogDescription: 'Portfolio of Dan Jared Viernes, featuring full-stack web applications, mobile projects, and software design.',
   ogImage: '/images/profile/profile2.jpg',
-  twitterCard: 'summary_large_image',
 })
 </script>
 
